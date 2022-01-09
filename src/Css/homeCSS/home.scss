@@ -1,0 +1,85 @@
+
+$linearOne: rgb(233,171,167);
+$linearTwo: rgb(180,235,213);
+$divOne: rgb(184,158,212);
+$divOne_shadow: rgb(184,158,212, 0.8);
+$divTwo: rgb(226,167,179);
+$divTwo_shadow: rgb(226,167,179, 0.8);
+$divThree: rgb(237,179,75);
+$divThree_shadow: rgb(237,179,75, 0.8);
+$divFour: rgb(231,241,233);
+$divFour_shadow: rgb(231,241,233, 0.8);
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 62.5%;
+}
+
+@mixin size($heigth, $width) {
+    height: $heigth;
+    width: $width;
+}
+
+.App
+{
+
+    height:100vh;
+    width: 100%;
+    background: linear-gradient(to bottom right, $linearOne, $linearTwo);
+    position: relative;
+    &__home
+    {
+        @include size(90%, 85%);
+        background-color: rgba(255, 255, 255, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1; 
+        border-radius: 3.5rem;
+    }
+    &__div1
+    {
+        @include size(5rem, 5rem);
+        background-color: $divOne;
+        position: absolute;
+        top: 10rem;
+        left: 17rem;
+        border-radius: 50%;
+        box-shadow: .1rem .1rem .1rem .1rem $divOne_shadow;
+    }
+    &__div2
+    {
+        @include size(8rem, 8rem);
+        background-color: $divTwo;
+        position: absolute;
+        top: 45%;
+        left: 40%;
+        border-radius: 50%;
+        box-shadow: .1rem .1rem .1rem .1rem $divTwo_shadow;
+    }
+    &__div3
+    {
+        @include size(6rem, 6rem);
+        background-color: $divThree;
+        position: absolute;
+        top: 70%;
+        left: 5%;
+        border-radius: 50%;
+        box-shadow: .1rem .1rem .1rem .1rem $divThree_shadow;
+    }
+    &__div4
+    {
+        @include size(13rem, 13rem);
+        background-color: $divFour;
+        position: absolute;
+        top: 45%;
+        left: 85%;
+        border-radius: 50%;
+        box-shadow: .1rem .1rem .1rem .1rem $divFour_shadow;
+    }
+}

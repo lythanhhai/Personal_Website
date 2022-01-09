@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom right, #e9aba7, #b4ebd5);
+  position: relative;
+}
+.App__home {
+  height: 90%;
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 3.5rem;
+}
+.App__div1 {
+  height: 5rem;
+  width: 5rem;
+  background-color: #b89ed4;
+  position: absolute;
+  top: 10rem;
+  left: 17rem;
+  border-radius: 50%;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(184, 158, 212, 0.8);
+}
+.App__div2 {
+  height: 8rem;
+  width: 8rem;
+  background-color: #e2a7b3;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  border-radius: 50%;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(226, 167, 179, 0.8);
+}
+.App__div3 {
+  height: 6rem;
+  width: 6rem;
+  background-color: #edb34b;
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  border-radius: 50%;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(237, 179, 75, 0.8);
+}
+.App__div4 {
+  height: 13rem;
+  width: 13rem;
+  background-color: #e7f1e9;
+  position: absolute;
+  top: 45%;
+  left: 85%;
+  border-radius: 50%;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(231, 241, 233, 0.8);
+}
+
+/*# sourceMappingURL=home.css.map */

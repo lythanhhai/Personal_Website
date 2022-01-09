@@ -1,0 +1,78 @@
+
+// biến
+$word_color: rgb(255,115,149);
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 62.5%;
+}
+
+@mixin size($height, $width) {
+    height: $height;
+    width: $width;
+}
+
+@mixin option($font, $line, $color)
+{
+    text-decoration: none;
+    font-size: $font;
+    line-height: $line;
+    color:$color;
+}
+
+.Choose
+{
+    @include size(100%, 100%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    &__Navbar
+    {
+        position: absolute;
+        right: 6%;
+        top: 4%;
+        &-circle
+        {
+            @include size(3.5rem, 3.5rem);
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            i
+            {
+                font-size: 2rem;
+                color: red;
+                margin:0.75rem 0.85rem;
+            }
+        }
+    }
+    &__option
+    {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &-home
+        {
+            @include option(3.5rem, 5rem, black);
+        }
+        &-about
+        {
+            @include option(3.5rem, 5rem, black);
+        }
+        &-porfolio
+        {
+            @include option(3.5rem, 5rem, black);
+        }
+        &-contact
+        {
+            @include option(3.5rem, 5rem, black);
+        }
+
+    }
+}

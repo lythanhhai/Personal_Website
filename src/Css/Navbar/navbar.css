@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+.Choose {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+.Choose__Navbar {
+  position: absolute;
+  right: 6%;
+  top: 4%;
+}
+.Choose__Navbar-circle {
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.Choose__Navbar-circle i {
+  font-size: 2rem;
+  color: red;
+  margin: 0.75rem 0.85rem;
+}
+.Choose__option {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Choose__option-home {
+  text-decoration: none;
+  font-size: 3.5rem;
+  line-height: 5rem;
+  color: black;
+}
+.Choose__option-about {
+  text-decoration: none;
+  font-size: 3.5rem;
+  line-height: 5rem;
+  color: black;
+}
+.Choose__option-porfolio {
+  text-decoration: none;
+  font-size: 3.5rem;
+  line-height: 5rem;
+  color: black;
+}
+.Choose__option-contact {
+  text-decoration: none;
+  font-size: 3.5rem;
+  line-height: 5rem;
+  color: black;
+}
+
+/*# sourceMappingURL=navbar.css.map */
