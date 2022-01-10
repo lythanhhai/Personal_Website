@@ -9,19 +9,39 @@ import { BrowserRouter , Route, Link, Redirect, Routes } from 'react-router-dom'
 // import component
 import Main from './Components/Main';
 import Choose from './Components/Choose';
+import Porfolio from './Components/Porfolio';
+import DetailProject from './Components/DetailProject';
+
+// import data
+import data from './Api/api';
+
+import { useState } from 'react';
 
 function App() {
+  // get index project 
+  const [index, setIndex] = useState(0);
+  const getIndexProject = (indexRef) => {
+      index = indexRef;
+      setIndex(indexRef);
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
           <div className="App__home">
               <Routes>
-                <Route path="/Home" element={
+                <Route path="" element={
                   <Main />
                 } />
                 <Route path="/Navbar" element={
                   <Choose />
                 } />
+                <Route path="/Porfolio" element={
+                  <Porfolio data={data} getIndexProject={getIndexProject}/>
+                }></Route>
+                <Route path="/Porfolio/DetailProject" element={
+                  <DetailProject data={data[index]}/>
+                }></Route>
               </Routes>
               
           </div>
