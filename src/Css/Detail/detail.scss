@@ -1,8 +1,8 @@
 
 // biến
 $word_color: rgb(245, 43, 94);
-$word_normal: rgb(47,51,80);
-$backgroudn_button: rgb(233,221,215);
+$word_high: rgb(41,56,73);
+$word_low: rgb(117, 117, 117);
 
 *
 {
@@ -35,8 +35,8 @@ $backgroudn_button: rgb(233,221,215);
     &__Navbar
     {
         position: absolute;
-        right: 6%;
-        top: 2%;
+        right: -1%;
+        top: -2%;
         &-circle
         {
             @include size(3.5rem, 3.5rem);
@@ -60,68 +60,120 @@ $backgroudn_button: rgb(233,221,215);
         left: 50%;
         transform: translate(-50%, -52%);
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
-        overflow-y: scroll;
-        /* Hide scrollbar for IE, Edge and Firefox */
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        &::-webkit-scrollbar {
-            display: none;
-        }
-
-        
-        h1
+        img 
         {
-            margin: 0.25rem 1rem 3rem 1rem;
-            font-size: 2.5rem;
+            @include size(100%, 60%);
+            object-fit: cover;
         }
-        &-products
+        &-product
         {
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: space-between;
-            // align-items: center;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 2rem;
-            .product
+            margin-left: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .name
+            {
+                font-size: 2.7rem;
+                font-weight: 550;
+                color: $word_high;
+                padding: 0rem 2rem 1rem 0rem;
+            }
+            .desc
+            {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: $word_low;
+                padding: 0rem 2rem 1rem 0rem;
+                text-align: justify;
+                //background-color: red;
+            }
+
+            .create
             {
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                .image
+                flex-direction: row;
+                padding: 0rem 2rem 1rem 0rem;
+                p:first-child
                 {
-                    @include size(15rem, 30rem);
-                    object-fit: cover;
-                    border-radius: 1rem;
+                    font-size: 1.5rem;
+                    color: $word_high;
                 }
-    
-                .name
+                p:last-child
                 {
-                    font-weight: 500;
-                    font-size: 1.7rem;
-                    padding: 1rem 1rem 0rem 1rem;
-                    color: $word_normal;
-                }
-    
-                .more
-                {
-                    color: $word_color;
-                    font-size: 1.2rem;
-                    outline: none;
-                    border: 1px solid white;
-                    background-color: $backgroudn_button;
-                    cursor: pointer;
-                    border-radius: 4rem;
-                    margin: 1rem;
-                    padding: 1rem;
+                    font-size: 1.3rem;
+                    color: $word_low;
+                    margin-left: 1rem;
+                    text-align: justify;
                 }
             }
-            
+
+            .tech
+            {
+                display: flex;
+                flex-direction: row;
+                padding: 0rem 2rem 1rem 0rem;
+
+                p:first-child
+                {
+                    font-size: 1.5rem;
+                    color: $word_high;
+                    width: 17rem;
+                    text-align: justify;
+                }
+
+                p:last-child
+                {
+                    font-size: 1.3rem;
+                    color: $word_low;
+                    margin-left: 1rem;
+                    text-align: justify;
+                }
+                
+            }
+
+            .role
+            {
+                display: flex;
+                flex-direction: row;
+                padding: 0rem 2rem 1rem 0rem;
+                p:first-child
+                {
+                    font-size: 1.5rem;
+                    color: $word_high;
+                    width: 5rem;
+                    text-align: justify;
+                }
+                p:last-child
+                {
+                    font-size: 1.3rem;
+                    color: $word_low;
+                    margin-left: 1rem;
+                    text-align: justify;
+                }
+            }
+
+            .view
+            {
+                display: flex;
+                flex-direction: row;
+                padding: 0rem 2rem 2rem 0rem;
+                p:first-child
+                {
+                    font-size: 1.5rem;
+                    color: $word_high;
+                    width: 10rem;
+                    text-align: justify;
+                }
+                &__link
+                {
+                    font-size: 1.3rem;
+                    color: $word_color;
+                    margin-left: 1rem;
+                    text-align: justify;
+                }
+            }
         }
     }
 }
