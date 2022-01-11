@@ -4,6 +4,12 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 const Main = () => {
     let navigate = useNavigate();
+    const clickPorfolio = () => {
+        navigate('/Porfolio');
+    }
+    const clickAbout = () => {
+        navigate('/About');
+    }
     const clickNavbar = () => {
         navigate('/Navbar');
     }
@@ -20,8 +26,8 @@ const Main = () => {
                     <h2 className='left__name'>Ly Thanh Hai</h2>
                     <p>Front-end Web Developer</p>
                     <div className="left__option">
-                        <button className='left__option-about'>More about me</button>
-                        <button className='left__option-porfolio'>Porfolio</button>
+                        <button className='left__option-about' onClick={() => {clickAbout()}}>More about me</button>
+                        <button className='left__option-porfolio' onClick={() => {clickPorfolio()}}>Porfolio</button>
                     </div>
                 </div>
                 <div className='Main__Infor-right'>

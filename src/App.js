@@ -20,10 +20,15 @@ import { useState } from 'react';
 function App() {
   // get index project 
   const [index, setIndex] = useState(0);
-  const getIndexProject = (indexRef) => {
-      index = indexRef;
+  const getIndexProject = () => {};
+  useEffect(
+  getIndexProject = (indexRef) => {
       setIndex(indexRef);
-  }
+  }, []);
+  // const getIndexProject = (indexRef) => {
+  //     //index = indexRef;
+  //     setIndex(indexRef);
+  // }
 
   return (
     <BrowserRouter>
