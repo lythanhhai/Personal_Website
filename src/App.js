@@ -15,20 +15,24 @@ import DetailProject from './Components/DetailProject';
 // import data
 import data from './Api/api';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   // get index project 
   const [index, setIndex] = useState(0);
-  const getIndexProject = () => {};
-  useEffect(
-  getIndexProject = (indexRef) => {
-      setIndex(indexRef);
-  }, []);
-  // const getIndexProject = (indexRef) => {
-  //     //index = indexRef;
-  //     setIndex(indexRef);
-  // }
+
+
+  const getIndexProject = (indexRef) => {
+    //index = indexRef;
+    setIndex(indexRef);  
+    localStorage.setItem("index", indexRef);
+  }
+
+  // useEffect(() => {
+  //   localStorage.setItem("index", index);
+  // }, []);
+
+  const index__reload = localStorage.getItem("index");
 
   return (
     <BrowserRouter>
@@ -45,7 +49,7 @@ function App() {
                   <Porfolio data={data} getIndexProject={getIndexProject}/>
                 }></Route>
                 <Route path="/Porfolio/DetailProject" element={
-                  <DetailProject data={data[index]}/>
+                  <DetailProject data={data[index__reload]}/>
                 }></Route>
               </Routes>
               

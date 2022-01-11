@@ -1,6 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Css/Porfolio/porfolio.css';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { useState, useEffect } from 'react';
 
 const Porfolio = ({data, getIndexProject}) => {
     let navigate = useNavigate();
@@ -9,10 +12,36 @@ const Porfolio = ({data, getIndexProject}) => {
         navigate("./detailProject");
     }
 
+    const [loading, setLoading] = useState(0);
+
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(1);
+        }, 1500);
+
+    }, [loading])
+    
     const elementProducts = data.map((product, index) => {
         const {image, name, desc, createDate, technologies, role, view_line} = product;
         //console.log(image);
         return(
+            loading == 0 ? 
+            (
+            <div key={index} className='product'>
+                <div className='image_ske'>
+                    <Skeleton height={130} width={`100%`} baseColor='rgba(140, 140, 140)'/>
+                </div>
+                <div className='name_ske'>
+                    <Skeleton height={20} width={`100%`} baseColor='rgba(140, 140, 140)'/>
+                </div>
+                <div className='more_ske'>
+                    <Skeleton height={30} width={`100%`} baseColor='rgba(140, 140, 140)'/>
+                </div>
+            </div>
+            )
+            :
+            (
             <div key={index} className='product'>
                 <img src={image} alt="error" className='image' />
                 <h3 className='name'>
@@ -22,6 +51,7 @@ const Porfolio = ({data, getIndexProject}) => {
                     View Detail Project
                 </button>
             </div>
+            )
         );
     })
     const clickNavbar = () => {
