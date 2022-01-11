@@ -120,6 +120,20 @@ $backgroudn_button: rgb(233,221,215);
                     margin: 1rem;
                     padding: 1rem;
                 }
+                .image_ske
+                {
+                    @include size(15rem, 30rem);
+                }
+    
+                .name_ske
+                {
+                    @include size(4rem, 15rem);
+                }
+    
+                .more_ske
+                {
+                    @include size(5rem, 15rem);
+                }
             }
             
         }

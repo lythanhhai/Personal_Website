@@ -89,5 +89,17 @@
   margin: 1rem;
   padding: 1rem;
 }
+.porfolio__content-products .product .image_ske {
+  height: 15rem;
+  width: 30rem;
+}
+.porfolio__content-products .product .name_ske {
+  height: 4rem;
+  width: 15rem;
+}
+.porfolio__content-products .product .more_ske {
+  height: 5rem;
+  width: 15rem;
+}
 
 /*# sourceMappingURL=porfolio.css.map */
