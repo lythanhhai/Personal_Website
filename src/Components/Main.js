@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Css/Main/main.css';
 import { Navigate, useNavigate } from 'react-router-dom';
+import image from '../Public/Image/vincent-ledvina-d1cKoISgRiU-unsplash.jpg'
 
 const Main = () => {
     let navigate = useNavigate();
@@ -31,9 +32,9 @@ const Main = () => {
                     </div>
                 </div>
                 <div className='Main__Infor-right'>
-                    <div className='div1'>
-                        <div className='div2'>
-                            
+                    <div className='circle1'>
+                        <div className='circle2'>
+                            <img src={image} className='avatar' alt="err"></img>
                         </div>
                     </div>
                 </div>
@@ -43,4 +44,3 @@ const Main = () => {
 }
 
 export default React.memo(Main);
-//<img src="" className='avatar' alt="err"></img>

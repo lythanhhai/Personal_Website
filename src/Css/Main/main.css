@@ -119,15 +119,51 @@
   color: white;
 }
 .Main__Infor-right {
-  height: 40rem;
-  width: 40rem;
-  background-color: turquoise;
+  height: 43rem;
+  width: 43rem;
+  position: absolute;
+  left: 152%;
+  top: -90%;
   border-radius: 50%;
-  animation-name: rotate1;
+}
+.Main__Infor-right .circle1 {
+  height: 95%;
+  width: 95%;
+  background-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border-right: 1rem solid white;
+  border-left: 1rem solid white;
+}
+.Main__Infor-right .circle1 .circle2 {
+  height: 95%;
+  width: 95%;
+  background-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border-top: 1rem solid #c0c0d4;
+  border-bottom: 1rem solid #c0c0d4;
+  animation-name: circle1;
   animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+.Main__Infor-right .circle1 .circle2 .avatar {
+  height: 95%;
+  width: 95%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 @keyframes circle {
