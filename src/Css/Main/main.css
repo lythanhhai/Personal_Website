@@ -44,7 +44,7 @@
 .Main__Infor-left p {
   font-size: 1.8rem;
   color: #929292;
-  line-height: 2.5rem;
+  line-height: 3rem;
 }
 .Main__Infor-left .left__name {
   font-size: 4.5rem;
@@ -60,9 +60,31 @@
   border: none;
   padding: 1rem 2rem;
   border-radius: 3rem;
-  color: #ff7395;
+  color: #f5688b;
   margin-left: 1rem;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+.Main__Infor-left .left__option-about::before {
+  content: "";
+  height: 100%;
+  width: 0%;
+  background-color: #f52156;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: width 0.4s ease;
+}
+.Main__Infor-left .left__option-about:hover::before {
+  height: 100%;
+  width: 100%;
+}
+.Main__Infor-left .left__option-about:hover {
+  background-color: transparent;
+  color: white;
 }
 .Main__Infor-left .left__option-porfolio {
   font-size: 1.5rem;
@@ -70,9 +92,68 @@
   border: none;
   padding: 1rem 2rem;
   border-radius: 3rem;
-  color: #ff7395;
+  color: #f5688b;
   margin-left: 1rem;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+}
+.Main__Infor-left .left__option-porfolio::before {
+  content: "";
+  height: 100%;
+  width: 0%;
+  background-color: #f52156;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: width 0.4s ease;
+}
+.Main__Infor-left .left__option-porfolio:hover::before {
+  height: 100%;
+  width: 100%;
+}
+.Main__Infor-left .left__option-porfolio:hover {
+  background-color: transparent;
+  color: white;
+}
+.Main__Infor-right {
+  height: 40rem;
+  width: 40rem;
+  background-color: turquoise;
+  border-radius: 50%;
+  animation-name: rotate1;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(30deg);
+  }
+  25% {
+    transform: rotate(60deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  75% {
+    transform: rotate(120deg);
+  }
+  100% {
+    transform: rotate(150deg);
+  }
+}
+@keyframes rotate1 {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

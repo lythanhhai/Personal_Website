@@ -1,6 +1,7 @@
 
 // biến
-$word_color: rgb(255,115,149);
+$word_color: rgb(245, 104, 139);
+$background_color: rgb(245, 33, 86);
 
 *
 {
@@ -56,7 +57,7 @@ $word_color: rgb(255,115,149);
             {
                 font-size: 1.8rem;
                 color: rgb(146, 146, 146);
-                line-height: 2.5rem;
+                line-height: 3rem;
             }
             .left__name
             {
@@ -71,26 +72,148 @@ $word_color: rgb(255,115,149);
                 {
                     font-size: 1.5rem;
                     outline: none;
-                    border:none;
+                    border: none;
                     padding: 1rem 2rem;
                     border-radius: 3rem;
                     color: $word_color;
                     margin-left: 1rem;
                     cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                    transition: color 0.4s ease;
+                    &::before
+                    {
+                        content: "";
+                        @include size(100%, 0%);
+                        background-color: $background_color;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
+                        transition: width 0.4s ease;
+                     
+                    }
+                    &:hover::before
+                    {
+                        @include size(100%, 100%);
+                    }
+                    &:hover
+                    {
+                        background-color: transparent;
+                        color: white;
+                    }
                 }
                 &-porfolio
                 {
                     font-size: 1.5rem;
                     outline: none;
-                    border:none;
+                    border: none;
                     padding: 1rem 2rem;
                     border-radius: 3rem;
                     color: $word_color;
                     margin-left: 1rem;
                     cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                    transition: color 0.4s ease;
+                    &::before
+                    {
+                        content: "";
+                        @include size(100%, 0%);
+                        background-color: $background_color;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
+                        transition: width 0.4s ease;
+                     
+                    }
+                    &:hover::before
+                    {
+                        @include size(100%, 100%);
+                    }
+                    &:hover
+                    {
+                        background-color: transparent;
+                        color: white;
+                    }
                 }
             }
         }
+        &-right
+        {
+            @include size(40rem, 40rem);
+            background-color: turquoise;
+            //position: absolute;
+            // left: 150%;
+            // top: -70%;
+            border-radius: 50%;
+            animation-name: rotate1;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            
+            // .div1
+            // {
+            //     @include size(90%, 90%);
+            //     background-color: white;
+            //     // position: absolute;
+            //     // left: 50%;
+            //     // top: 50%;
+            //     // transform: translate(-50%, -50%);
+            //     border-radius: 50%;
+                
+            //     .div2
+            //     {
+            //         @include size(90%, 90%);
+            //         background-color: rgb(164, 164, 231);
+            //         // position: absolute;
+            //         // left: 50%;
+            //         // top: 50%;
+            //         // transform: translate(-50%, -50%);
+            //         border-radius: 50%;
+            //         animation-name: circle1;
+            //         animation-duration: 10s;
+            //         animation-timing-function: linear;
+            //         animation-iteration-count: infinite;
+            //         animation-direction: alternate;
+            //         .avatar
+            //         {
+
+            //         }
+            //     }
+            // }
+
+        }
 
     }
+}
+
+@keyframes circle {
+    0%
+    {
+        transform: rotate(30deg);
+    }
+    25%
+    {
+        transform: rotate(60deg);
+    }
+    50%
+    {
+        transform: rotate(90deg);
+    }
+    75%
+    {
+        transform: rotate(120deg);
+    }
+    100%
+    {
+        transform: rotate(150deg);
+    }
+}
+
+@keyframes rotate1 {
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
 }
