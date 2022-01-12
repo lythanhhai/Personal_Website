@@ -31,7 +31,11 @@ const Main = () => {
                     </div>
                 </div>
                 <div className='Main__Infor-right'>
-                
+                    <div className='div1'>
+                        <div className='div2'>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -39,3 +43,4 @@ const Main = () => {
 }
 
 export default React.memo(Main);
+//<img src="" className='avatar' alt="err"></img>

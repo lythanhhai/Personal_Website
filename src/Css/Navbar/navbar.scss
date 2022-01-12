@@ -60,19 +60,60 @@ $word_color: rgb(255,115,149);
         &-home
         {
             @include option(3.5rem, 5rem, black);
+            //position: absolute;
+            &:hover
+            {
+                color: $word_color;
+                transition: all 0.10s linear;
+            }
+           
         }
         &-about
         {
             @include option(3.5rem, 5rem, black);
+            &:hover
+            {
+                color: $word_color;
+                transition: all 0.10s linear;
+            }
+           
         }
         &-porfolio
         {
             @include option(3.5rem, 5rem, black);
+
+            &:hover
+            {
+                color: $word_color;
+                transition: all 0.10s linear;
+            }
+           
         }
         &-contact
         {
             @include option(3.5rem, 5rem, black);
+            &:hover
+            {
+                color: $word_color;
+                transition: all 0.10s linear;
+            }
+            
         }
+
+    }
+}
+
+@keyframes rightToLeft {
+    0%
+    {
+
+    }
+    50%
+    {
+
+    }
+    100%
+    {
 
     }
 }
