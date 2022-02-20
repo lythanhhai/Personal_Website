@@ -11,6 +11,7 @@ import Main from './Components/Main';
 import Choose from './Components/Choose';
 import Porfolio from './Components/Porfolio';
 import DetailProject from './Components/DetailProject';
+import ContactMe from './Components/Contact';
 
 // import data
 import data from './Api/api';
@@ -25,14 +26,14 @@ function App() {
   const getIndexProject = (indexRef) => {
     //index = indexRef;
     setIndex(indexRef);  
-    localStorage.setItem("index", indexRef);
+    //localStorage.setItem("index", indexRef);
   }
 
   // useEffect(() => {
   //   localStorage.setItem("index", index);
   // }, []);
 
-  const index__reload = localStorage.getItem("index");
+  //Componentsst index__reload = localStorage.getItem("index");
 
   return (
     <BrowserRouter>
@@ -49,11 +50,16 @@ function App() {
                   <Porfolio data={data} getIndexProject={getIndexProject}/>
                 }></Route>
                 <Route path="/Porfolio/DetailProject" element={
-                  <DetailProject data={data[index__reload]}/>
+                  <DetailProject data={data[index]}/>
                 }></Route>
+                <Route 
+                  path="/Contact" element={
+                    <ContactMe />
+                  }
+                />
               </Routes>
-              
           </div>
+          
           <div className="App__div1"></div>
           <div className="App__div2"></div>
           <div className="App__div3"></div>
