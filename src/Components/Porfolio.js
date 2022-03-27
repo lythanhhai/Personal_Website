@@ -4,12 +4,15 @@ import '../Css/Porfolio/porfolio.css';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import getIndexReducer from '../Reducer/getIndexReducer';
+import getIndex from '../Action/getIndexProject';
 
 const Porfolio = ({data, getIndexProject}) => {
     let navigate = useNavigate();
-    const viewDetailProject = () => 
+    const viewDetailProject = (id) => 
     {
-        navigate("./detailProject");
+        navigate(`./detailProject/${id}`);
     }
 
     const [loading, setLoading] = useState(0);
@@ -22,6 +25,11 @@ const Porfolio = ({data, getIndexProject}) => {
 
     }, [loading])
     
+    // khai báo selector redux
+    const [id, setId] = useState(0);
+    const identity = useSelector(state => state.getIndexReducer).id;
+    const dispatch = useDispatch();
+
     const elementProducts = data.map((product, index) => {
         const {image, name, desc, createDate, technologies, role, view_line} = product;
         //console.log(image);
@@ -47,7 +55,7 @@ const Porfolio = ({data, getIndexProject}) => {
                 <h3 className='name'>
                     {name}
                 </h3>
-                <button className='more' onClick={() => {viewDetailProject(); getIndexProject(index);}}>
+                <button className='more' onClick={() => {viewDetailProject(index + 1); setId(index + 1); dispatch(getIndex(index + 1)); getIndexProject(index);}}>
                     View Detail Project
                 </button>
             </div>

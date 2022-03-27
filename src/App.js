@@ -12,16 +12,17 @@ import Choose from './Components/Choose';
 import Porfolio from './Components/Porfolio';
 import DetailProject from './Components/DetailProject';
 import ContactMe from './Components/Contact';
+import AboutMe from './Components/AboutMe';
 
 // import data
 import data from './Api/api';
 
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 function App() {
   // get index project 
   const [index, setIndex] = useState(0);
-
 
   const getIndexProject = (indexRef) => {
     //index = indexRef;
@@ -34,6 +35,10 @@ function App() {
   // }, []);
 
   //Componentsst index__reload = localStorage.getItem("index");
+
+  // get Index project by redux
+  const identity = useSelector(state => state.getIndexReducer).id;
+  console.log(identity);
 
   return (
     <BrowserRouter>
@@ -49,13 +54,15 @@ function App() {
                 <Route path="/Porfolio" element={
                   <Porfolio data={data} getIndexProject={getIndexProject}/>
                 }></Route>
-                <Route path="/Porfolio/DetailProject" element={
+                <Route path={`/Porfolio/DetailProject/${identity}`} element={
                   <DetailProject data={data[index]}/>
                 }></Route>
                 <Route 
                   path="/Contact" element={
                     <ContactMe />
                   }
+                />
+                <Route path="/About" element={<AboutMe/>}
                 />
               </Routes>
           </div>
